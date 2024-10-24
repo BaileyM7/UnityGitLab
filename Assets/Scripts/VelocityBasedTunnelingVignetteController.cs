@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.Assertions;
 using UnityEngine.TextCore.Text;
-
+// TESTING 123
 namespace UnityEngine.XR.Interaction.Toolkit
 {
     /// <summary>
@@ -48,7 +48,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
             public static readonly int vignetteColor = Shader.PropertyToID("_VignetteColor");
             public static readonly int vignetteColorBlend = Shader.PropertyToID("_VignetteColorBlend");
         }
-        
+
 
         // Velocity-based tunneling vignette
 
@@ -297,7 +297,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                     break;
                 }
             }
-            
+
             m_CurrentParameters.CopyFrom(defaultParameters);
             m_CurrentParameters.apertureSize = dynamicApertureSize;
 
