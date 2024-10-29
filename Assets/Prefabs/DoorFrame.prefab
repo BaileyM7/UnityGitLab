@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6444493962360093545
+--- !u!1 &6247917921859690844
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1379205476482459724}
-  - component: {fileID: 8090660143517119962}
-  - component: {fileID: 4679401791496324025}
-  - component: {fileID: 5267712188662600143}
+  - component: {fileID: 1972932150171101567}
+  - component: {fileID: 1634728276672253884}
+  - component: {fileID: 5349322477456702170}
+  - component: {fileID: 7120429933621412165}
   m_Layer: 0
-  m_Name: cubeeee
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1379205476482459724
+--- !u!4 &1972932150171101567
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444493962360093545}
+  m_GameObject: {fileID: 6247917921859690844}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.475}
-  m_LocalScale: {x: 0.24472733, y: 0.24472733, z: 0.5668864}
+  m_LocalPosition: {x: 0.31, y: 0, z: 0.06}
+  m_LocalScale: {x: 0.22605364, y: 0.03659921, z: 2.0545473}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1802015072360907981}
+  m_Father: {fileID: 9041688075160266542}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8090660143517119962
+--- !u!33 &1634728276672253884
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444493962360093545}
+  m_GameObject: {fileID: 6247917921859690844}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4679401791496324025
+--- !u!23 &5349322477456702170
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444493962360093545}
+  m_GameObject: {fileID: 6247917921859690844}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,13 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5267712188662600143
+--- !u!65 &7120429933621412165
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444493962360093545}
+  m_GameObject: {fileID: 6247917921859690844}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,9 +103,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &9110302764832992188
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+  m_Center: {x: 0, y: 0.00000011920929, z: 0}
+--- !u!1 &9209502352045248108
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,48 +113,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1802015072360907981}
-  - component: {fileID: 2844659945940574398}
-  - component: {fileID: 4162450610549984159}
-  - component: {fileID: 2442782046189064646}
+  - component: {fileID: 9041688075160266542}
+  - component: {fileID: 5429182765544806556}
+  - component: {fileID: 8723600376860361993}
+  - component: {fileID: 3517259802200212442}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: DoorFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1802015072360907981
+--- !u!4 &9041688075160266542
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110302764832992188}
+  m_GameObject: {fileID: 9209502352045248108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.8, y: 1.52, z: 9.97}
+  m_LocalScale: {x: 1.5516316, y: 3.055348, z: 0.22225629}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1379205476482459724}
+  - {fileID: 1972932150171101567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2844659945940574398
+--- !u!33 &5429182765544806556
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110302764832992188}
+  m_GameObject: {fileID: 9209502352045248108}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4162450610549984159
+--- !u!23 &8723600376860361993
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110302764832992188}
+  m_GameObject: {fileID: 9209502352045248108}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -168,7 +168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb52cdea2f783470792a702856b57333, type: 2}
+  - {fileID: 2100000, guid: 48fc01ada83f145cc84869291773cb67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,13 +190,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2442782046189064646
+--- !u!65 &3517259802200212442
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110302764832992188}
+  m_GameObject: {fileID: 9209502352045248108}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
