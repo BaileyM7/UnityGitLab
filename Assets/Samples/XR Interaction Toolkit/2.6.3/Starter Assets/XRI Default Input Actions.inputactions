@@ -2730,6 +2730,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "car",
+            "id": "a290e6ff-8fbe-4204-bbd2-da50616ca0f3",
+            "actions": [
+                {
+                    "name": "drive",
+                    "type": "Value",
+                    "id": "e756776a-450a-4ecd-8ed6-4f4799b430e8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "30eaa14b-7ef6-4e7e-9ec8-c55bfa9724f9",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller;Continuous Move;Noncontinuous Move",
+                    "action": "drive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

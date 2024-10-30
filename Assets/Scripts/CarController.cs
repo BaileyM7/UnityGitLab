@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class CarController : MonoBehaviour
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
+    public InputActionReference stick;
 
     WheelControl[] wheels;
     Rigidbody rigidBody;
@@ -18,6 +21,7 @@ public class CarController : MonoBehaviour
     void Start()
     {
 
+        rigidBody = GetComponent<Rigidbody>();
         // Adjust center of mass vertically, to help prevent the car from rolling
         rigidBody.centerOfMass += Vector3.up * centreOfGravityOffset;
 
@@ -28,19 +32,20 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
+        // var inputDevices = new List<UnityEngine.XR.InputDevice>();
+        // UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
-        foreach (var device in inputDevices)
-        {
-            Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
-        }
-        rigidBody = GetComponent<Rigidbody>();
+        // foreach (var device in inputDevices)
+        // {
+        //     Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
+        // }
+        // rigidBody = GetComponent<Rigidbody>();
 
         // float vInput = Input.GetAxis("Vertical");
         // float hInput = Input.GetAxis("Horizontal");
-        float vInput = 0;
-        float hInput = 0;
+        Vector2 input = stick.ToInputAction().ReadValue<Vector2>();
+        float vInput = input.y;
+        float hInput = input.x;        
         
         // Calculate current speed in relation to the forward direction of the car
         // (this returns a negative number when traveling backwards)
@@ -69,6 +74,7 @@ public class CarController : MonoBehaviour
             if (wheel.steerable)
             {
                 wheel.WheelCollider.steerAngle = hInput * currentSteerRange;
+                Debug.Log(hInput*currentSteerRange);
             }
 
             if (isAccelerating)
