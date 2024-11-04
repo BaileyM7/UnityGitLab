@@ -12,6 +12,12 @@ public class CarController : MonoBehaviour
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
+    public Vector3 enterLoc = new Vector3(-0.639999986f,0,1.42999995f);
+    public Quaternion enterRot = new Quaternion(0f,0f,0f,1f);
+    public Vector3 exitLoc = new Vector3(-2.20000005f,0f,1.13f);
+    public Quaternion exitRot = new Quaternion(0f,0f,0f,1f);
+    public GameObject player;
+    public GameObject car;
     public InputActionReference stick;
 
     WheelControl[] wheels;
@@ -27,6 +33,20 @@ public class CarController : MonoBehaviour
 
         // Find all child GameObjects that have the WheelControl script attached
         wheels = GetComponentsInChildren<WheelControl>();
+    }
+
+    public void PlayerEnter(){
+        Debug.Log("PLAYER ENTER\n");
+        player.transform.SetParent(car.transform);
+        player.transform.position = enterLoc;
+        player.transform.rotation = enterRot;
+    }
+
+    public void PlayerExit(){
+        Debug.Log("PLAYER EXIT\n");
+        player.transform.position = exitLoc;
+        player.transform.rotation = exitRot;
+        player.transform.parent = null;
     }
 
     // Update is called once per frame
@@ -74,7 +94,6 @@ public class CarController : MonoBehaviour
             if (wheel.steerable)
             {
                 wheel.WheelCollider.steerAngle = hInput * currentSteerRange;
-                Debug.Log(hInput*currentSteerRange);
             }
 
             if (isAccelerating)
