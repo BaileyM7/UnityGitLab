@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         // detect player falling into the void, move to origin
         if(player.transform.position.y < maxFallDist){
-            player.transform.position = new Vector3(0,0,0);
+            player.transform.localPosition = new Vector3(0,0,0);
+            player.transform.localRotation = new Quaternion(0,0,0,1);
         }
     }
 }

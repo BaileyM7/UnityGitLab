@@ -12,13 +12,19 @@ public class CarController : MonoBehaviour
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
-    public Vector3 enterLoc = new Vector3(-0.639999986f,0,1.42999995f);
+    public Vector3 enterLoc = new Vector3(-0.340000004f,-0.768000007f,1.19000006f);
     public Quaternion enterRot = new Quaternion(0f,0f,0f,1f);
     public Vector3 exitLoc = new Vector3(-2.20000005f,0f,1.13f);
     public Quaternion exitRot = new Quaternion(0f,0f,0f,1f);
     public GameObject player;
     public GameObject car;
     public InputActionReference stick;
+    public GameObject playerMove;
+    public GameObject playerTP;
+    public GameObject playerTurn;
+    public GameObject playerClimb;
+    // public GameObject rightControllerTeleport;
+    bool inUse = false;
 
     WheelControl[] wheels;
     Rigidbody rigidBody;
@@ -38,20 +44,41 @@ public class CarController : MonoBehaviour
     public void PlayerEnter(){
         Debug.Log("PLAYER ENTER\n");
         player.transform.SetParent(car.transform);
-        player.transform.position = enterLoc;
-        player.transform.rotation = enterRot;
+        player.transform.localPosition = enterLoc;
+        player.transform.localRotation = enterRot;
+        inUse = true;
+        playerMove.SetActive(false);
+        playerTP.SetActive(false);
+        playerTurn.SetActive(false);
+        playerClimb.SetActive(false);
     }
 
     public void PlayerExit(){
         Debug.Log("PLAYER EXIT\n");
-        player.transform.position = exitLoc;
-        player.transform.rotation = exitRot;
+        player.transform.localPosition = exitLoc;
+        player.transform.localRotation = exitRot;
         player.transform.parent = null;
+        inUse = false;
+        playerMove.SetActive(true);
+        playerTP.SetActive(true);
+        playerTurn.SetActive(true);
+        playerClimb.SetActive(true);
+    }
+
+    public void toggleEnterExit(){
+        if(inUse){
+            PlayerExit();
+        } else{
+            PlayerEnter();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!inUse){
+            return;
+        }
         // var inputDevices = new List<UnityEngine.XR.InputDevice>();
         // UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
