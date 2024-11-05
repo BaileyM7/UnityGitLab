@@ -7,7 +7,7 @@ public class PhoneController : MonoBehaviour
     public AudioSource phoneRinging;
     public TMP_Text displayText;
     private bool isRinging = false;
-    private string[] words = { "cheese", "pepperoni" }; // possible pizza selection
+    private string[] words = { "cheese", "pepperoni", "sausage" }; // possible pizza selection
 
     private void Start()
     {

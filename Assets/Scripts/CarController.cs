@@ -26,6 +26,9 @@ public class CarController : MonoBehaviour
     // public GameObject rightControllerTeleport;
     bool inUse = false;
 
+    public int maxFallDist = -5;
+    public Vector3 respawnLoc = new Vector3(-3.18000007f,1.24000001f,-56.5499992f);
+
     WheelControl[] wheels;
     Rigidbody rigidBody;
 
@@ -76,6 +79,13 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(car.transform.position.y < maxFallDist){
+            car.transform.position = respawnLoc;
+            car.transform.localRotation = new Quaternion(0,0,0,1);
+            if(inUse){
+                PlayerExit();
+            }
+        }
         if(!inUse){
             return;
         }
