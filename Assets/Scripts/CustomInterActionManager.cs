@@ -12,12 +12,12 @@ public class CustomInterActionManager : XRInteractionManager
             interactable.transform.position = rayInteractor.transform.position;
             interactable.transform.rotation = rayInteractor.transform.rotation;
 
-            Rigidbody rb = interactable.transform.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-            }
+            // Rigidbody rb = interactable.transform.GetComponent<Rigidbody>();
+            // if (rb != null)
+            // {
+            //     rb.velocity = Vector3.zero;
+            //     rb.angularVelocity = Vector3.zero;
+            // }
         }
         else
         {
