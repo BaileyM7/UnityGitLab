@@ -1,10 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PizzaBoxLock : MonoBehaviour
 {
     public Transform lid; // Assign the lid Transform
     public Transform bottomBox; // Assign the bottom box Transform
-    public int closeThreshold = 0; // Threshold for lid closure (wrong)
+    public float closeThreshold = .01f; // Threshold for lid closure (wrong)
     public bool isLocked = false;
 
     private Rigidbody lidRb;
