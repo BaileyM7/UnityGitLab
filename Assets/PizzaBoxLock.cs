@@ -6,14 +6,21 @@ public class PizzaBoxLock : MonoBehaviour
 {
     public Transform lid; // Assign the lid Transform
     public Transform bottomBox; // Assign the bottom box Transform
-    public float closeThreshold = .01f; // Threshold for lid closure (wrong)
+    public float closeThreshold = 0.05f; // Distance threshold for lid closure
     public bool isLocked = false;
 
     private Rigidbody lidRb;
+    private Rigidbody bottomRb;
 
     void Start()
     {
         lidRb = lid.GetComponent<Rigidbody>();
+        bottomRb = bottomBox.GetComponent<Rigidbody>();
+        if (bottomRb == null)
+        {
+            bottomRb = bottomBox.gameObject.AddComponent<Rigidbody>();
+            bottomRb.isKinematic = true;
+        }
     }
 
     void Update()
@@ -31,15 +38,30 @@ public class PizzaBoxLock : MonoBehaviour
 
     void LockBox()
     {
+        // Debug.Log("Box locked!");
+
         isLocked = true;
+
+        // lock lid
         lidRb.isKinematic = true;
         lid.SetParent(bottomBox);
+
+        bottomRb.isKinematic = false;
+        XRGrabInteractable grabInteractable = bottomBox.GetComponent<XRGrabInteractable>();
+        if (grabInteractable == null)
+        {
+            grabInteractable = bottomBox.gameObject.AddComponent<XRGrabInteractable>();
+        }
     }
 
     public void UnlockBox()
     {
+        // Debug.Log("Box unlocked!");
+
         isLocked = false;
         lidRb.isKinematic = false;
         lid.SetParent(null);
+
+        bottomRb.isKinematic = true;
     }
 }
