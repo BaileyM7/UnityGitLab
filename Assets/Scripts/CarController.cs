@@ -12,10 +12,10 @@ public class CarController : MonoBehaviour
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
-    public Vector3 enterLoc = new Vector3(-0.340000004f,-0.768000007f,1.19000006f);
-    public Quaternion enterRot = new Quaternion(0f,0f,0f,1f);
-    public Vector3 exitLoc = new Vector3(-2.20000005f,0f,1.13f);
-    public Quaternion exitRot = new Quaternion(0f,0f,0f,1f);
+    public Vector3 enterLoc = new Vector3(-0.340000004f, -0.768000007f, 1.19000006f);
+    public Quaternion enterRot = new Quaternion(0f, 0f, 0f, 1f);
+    public Vector3 exitLoc = new Vector3(-2.20000005f, 0f, 1.13f);
+    public Quaternion exitRot = new Quaternion(0f, 0f, 0f, 1f);
     public GameObject player;
     public GameObject car;
     public InputActionReference stick;
@@ -27,7 +27,7 @@ public class CarController : MonoBehaviour
     bool inUse = false;
 
     public int maxFallDist = -5;
-    public Vector3 respawnLoc = new Vector3(-3.18000007f,1.24000001f,-56.5499992f);
+    public Vector3 respawnLoc = new Vector3(-3.18000007f, 1.24000001f, -56.5499992f);
 
     WheelControl[] wheels;
     Rigidbody rigidBody;
@@ -44,7 +44,8 @@ public class CarController : MonoBehaviour
         wheels = GetComponentsInChildren<WheelControl>();
     }
 
-    public void PlayerEnter(){
+    public void PlayerEnter()
+    {
         Debug.Log("PLAYER ENTER\n");
         player.transform.SetParent(car.transform);
         player.transform.localPosition = enterLoc;
@@ -56,7 +57,8 @@ public class CarController : MonoBehaviour
         playerClimb.SetActive(false);
     }
 
-    public void PlayerExit(){
+    public void PlayerExit()
+    {
         Debug.Log("PLAYER EXIT\n");
         player.transform.localPosition = exitLoc;
         player.transform.localRotation = exitRot;
@@ -68,10 +70,14 @@ public class CarController : MonoBehaviour
         playerClimb.SetActive(true);
     }
 
-    public void toggleEnterExit(){
-        if(inUse){
+    public void toggleEnterExit()
+    {
+        if (inUse)
+        {
             PlayerExit();
-        } else{
+        }
+        else
+        {
             PlayerEnter();
         }
     }
@@ -79,14 +85,22 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(car.transform.position.y < maxFallDist){
+        if (car.transform.position.y < maxFallDist)
+        {
             car.transform.position = respawnLoc;
-            car.transform.localRotation = new Quaternion(0,0,0,1);
-            if(inUse){
-                PlayerExit();
-            }
+            car.transform.localRotation = new Quaternion(0, 0, 0, 1);
+            rigidBody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
         }
-        if(!inUse){
+        if (!inUse)
+        {
+            rigidBody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            foreach (var wheel in wheels)
+            {
+            if (wheel.steerable)
+                {
+                    wheel.WheelCollider.steerAngle = 0;
+                }
+            }
             return;
         }
         // var inputDevices = new List<UnityEngine.XR.InputDevice>();
@@ -102,8 +116,8 @@ public class CarController : MonoBehaviour
         // float hInput = Input.GetAxis("Horizontal");
         Vector2 input = stick.ToInputAction().ReadValue<Vector2>();
         float vInput = input.y;
-        float hInput = input.x;        
-        
+        float hInput = input.x;
+
         // Calculate current speed in relation to the forward direction of the car
         // (this returns a negative number when traveling backwards)
         float forwardSpeed = Vector3.Dot(transform.forward, rigidBody.velocity);
