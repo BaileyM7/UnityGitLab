@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 3936984247891831677}
   - component: {fileID: 2287153387618840621}
   - component: {fileID: 9082408034994409475}
+  - component: {fileID: 5943113602692799545}
   m_Layer: 6
   m_Name: PizzaDough
-  m_TagString: Untagged
+  m_TagString: Dough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771109284301021700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
@@ -372,6 +373,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 15.386607, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 6.6933026, z: -0.00000011920929}
+--- !u!114 &5943113602692799545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771109284301021700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ceefbbc637f5a4c9b5717cb8861f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socketed: []
 --- !u!1 &1879107808820089907
 GameObject:
   m_ObjectHideFlags: 0
