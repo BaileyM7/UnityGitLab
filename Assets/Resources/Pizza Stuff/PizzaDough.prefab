@@ -235,11 +235,11 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 1
+  m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 1
+  m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -350,7 +350,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 15.386607, z: 1.0000002}
+  m_Size: {x: 1.0000001, y: 20.38661, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 6.6933026, z: -0.00000011920929}
 --- !u!65 &9082408034994409475
 BoxCollider:
@@ -369,9 +369,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 15.386607, z: 1.0000002}
+  m_Size: {x: 1.0000001, y: 20.38661, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 6.6933026, z: -0.00000011920929}
 --- !u!114 &5943113602692799545
 MonoBehaviour:

@@ -9,6 +9,7 @@ TagManager:
   - Topping
   - lid
   - Dough
+  - Pep
   layers:
   - Default
   - TransparentFX

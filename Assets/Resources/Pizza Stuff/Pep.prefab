@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2560958626006498873}
   m_Layer: 6
   m_Name: Pepperoni (11)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4113473566876834062}
   m_Layer: 6
   m_Name: Pepperoni (6)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 1397460852266184274}
   m_Layer: 6
   m_Name: Pepperoni (13)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 1728087553978651349}
   m_Layer: 6
   m_Name: Pepperoni (15)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 2603567573480915432}
   m_Layer: 6
   m_Name: Pep
-  m_TagString: Topping
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,11 +622,11 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 1
+  m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 1
+  m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -677,7 +677,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.35877347, y: 0.08496225, z: 0.36030784}
+  m_Size: {x: 0.35877347, y: 0.05496225, z: 0.36030784}
   m_Center: {x: -0.11008644, y: 0.0332461, z: 0.12475501}
 --- !u!1 &2750363289786568035
 GameObject:
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 1261704538561445665}
   m_Layer: 6
   m_Name: Pepperoni (1)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 7764137868150581841}
   m_Layer: 6
   m_Name: Pepperoni (9)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 7461359121567356858}
   m_Layer: 6
   m_Name: Pepperoni (4)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 1666316022264908291}
   m_Layer: 6
   m_Name: Pepperoni (8)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 4464694621882905435}
   m_Layer: 6
   m_Name: Pepperoni (2)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 7412320996847303418}
   m_Layer: 6
   m_Name: Pepperoni (12)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 4033672768966046008}
   m_Layer: 6
   m_Name: Pepperoni (14)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 2783617851990653402}
   m_Layer: 6
   m_Name: Pepperoni
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1580,7 +1580,7 @@ GameObject:
   - component: {fileID: 4106806062073721360}
   m_Layer: 6
   m_Name: Pepperoni (3)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 2876504315076400903}
   m_Layer: 6
   m_Name: Pepperoni (10)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1794,7 +1794,7 @@ GameObject:
   - component: {fileID: 2564115254682993780}
   m_Layer: 6
   m_Name: Pepperoni (5)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1901,7 +1901,7 @@ GameObject:
   - component: {fileID: 6611985017234588416}
   m_Layer: 6
   m_Name: Pepperoni (7)
-  m_TagString: Untagged
+  m_TagString: Pep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
