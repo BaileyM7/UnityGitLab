@@ -4144,14 +4144,14 @@ MonoBehaviour:
   customerPrefabs:
   - {fileID: 4039544833606789864, guid: 12449a673ff2bd44c93c4e74eeac4157, type: 3}
   - {fileID: 5398311196093123252, guid: 17798b6a40db0a341881cd17504668ad, type: 3}
-  - {fileID: 378662194955493931, guid: e8c7276f2932ab9448cccd15bf16ec9a, type: 3}
   - {fileID: 4588050709352506422, guid: beb97a1c05a00fd44bbb57df5f67e6c3, type: 3}
+  - {fileID: 378662194955493931, guid: e8c7276f2932ab9448cccd15bf16ec9a, type: 3}
   spawnPoint: {fileID: 413440756}
   targetPoint: {fileID: 343808336}
   moveSpeed: 2
   minSpawnDelay: 1
-  maxSpawnDelay: 5
-  spacing: 1.5
+  maxSpawnDelay: 4
+  spacingDistance: 4
 --- !u!4 &413440756
 Transform:
   m_ObjectHideFlags: 0
@@ -19712,10 +19712,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3906909573849478179, guid: beb97a1c05a00fd44bbb57df5f67e6c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb97a1c05a00fd44bbb57df5f67e6c3, type: 3}
 --- !u!1001 &5023969586320735684
 PrefabInstance:
