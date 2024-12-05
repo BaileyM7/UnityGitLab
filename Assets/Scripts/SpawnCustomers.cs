@@ -42,6 +42,7 @@ public class SpawnCustomers : MonoBehaviour
     {
         // picks a random prefab
         GameObject selectedPrefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
+        Debug.Log(selectedPrefab.name);
 
         // define a 180-degree rotation around the Y-axis
         Quaternion rotation = Quaternion.Euler(0, 180, 0);
