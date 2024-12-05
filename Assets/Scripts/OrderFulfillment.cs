@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,8 @@ public class Order{
 public class OrderFulfillment : MonoBehaviour
 {
 
-    AudioSource victoryNoise;
-    AudioSource wrongOrderNoise;
+    public AudioSource victoryNoise;
+    public AudioSource wrongOrderNoise;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +31,36 @@ public class OrderFulfillment : MonoBehaviour
         // behaviour when an order is recieved.
         if (isCorrectOrder(other.gameObject))
         {
+            Debug.Log("Correct Order");
             victoryNoise.Play();
         }
         else
         {
+            Debug.Log("Wrong Order");
             wrongOrderNoise.Play();
         }
-        Destroy(other);
+
+        List<GameObject> list = new();
+        RecursiveDestroy(other.transform, list);
+        foreach(GameObject go in list){
+            Destroy(gameObject);
+        }
+    }
+
+    void RecursiveDestroy(Transform go, List<GameObject> list){
+        list.Add(go.gameObject);
+        foreach(Transform t in go){
+            RecursiveDestroy(t, list);
+        }
+    }
+
+    void Consume(Transform t){
+        foreach (Transform ingredient in t.Find("scaleTranslator")){
+            Debug.Log("DESTROY:");
+            Debug.Log(ingredient.gameObject);
+            Destroy(ingredient.gameObject);
+        }
+        Destroy(t.gameObject);
     }
 
     bool isCorrectOrder(GameObject crust)
@@ -53,6 +77,7 @@ public class OrderFulfillment : MonoBehaviour
         // does it match the expected?
         //TODO using temp order for now
         Order temp = new Order();
+        temp.cheese = true; temp.sauce = true; temp.pep = true;
         return temp.cheese == hasCheese && temp.sauce == hasSauce && temp.pep == hasPep && temp.ssg == hasSsg;
     }
 }
