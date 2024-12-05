@@ -11,8 +11,8 @@ public class SpawnCustomers : MonoBehaviour
     public float minSpawnDelay = 1f;     // minimum time between spawns
     public float maxSpawnDelay = 5f;     // maximum time between spawns
 
-    private List<GameObject> activeCustomers = new List<GameObject>(); // Track active customers
-    private int maxCustomers = 2; // maximum number of customers allowed at a time
+    public List<GameObject> activeCustomers = new List<GameObject>(); // Track active customers
+    public int maxCustomers = 1; // maximum number of customers allowed at a time
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class SpawnCustomers : MonoBehaviour
     {
         // picks a random prefab
         GameObject selectedPrefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
-        Debug.Log(selectedPrefab.name);
+        Debug.Log(selectedPrefab);
 
         // define a 180-degree rotation around the Y-axis
         Quaternion rotation = Quaternion.Euler(0, 180, 0);
@@ -79,5 +79,7 @@ public class SpawnCustomers : MonoBehaviour
         
 
     }
+
+    
 }
 

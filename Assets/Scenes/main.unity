@@ -4163,13 +4163,14 @@ MonoBehaviour:
   customerPrefabs:
   - {fileID: 4039544833606789864, guid: 12449a673ff2bd44c93c4e74eeac4157, type: 3}
   - {fileID: 5398311196093123252, guid: 17798b6a40db0a341881cd17504668ad, type: 3}
-  - {fileID: 4588050709352506422, guid: beb97a1c05a00fd44bbb57df5f67e6c3, type: 3}
   - {fileID: 378662194955493931, guid: e8c7276f2932ab9448cccd15bf16ec9a, type: 3}
   spawnPoint: {fileID: 413440756}
   targetPoint: {fileID: 343808336}
   moveSpeed: 2
   minSpawnDelay: 1
   maxSpawnDelay: 4
+  activeCustomers: []
+  maxCustomers: 1
 --- !u!4 &413440756
 Transform:
   m_ObjectHideFlags: 0
@@ -19746,7 +19747,7 @@ PrefabInstance:
     - target: {fileID: 1321401173640221840, guid: beb97a1c05a00fd44bbb57df5f67e6c3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6c464bfdfd60731438ef952ec89eb2fc, type: 3}
+      objectReference: {fileID: 8300000, guid: 8b3cadc051eda3848a4d917afcf813cb, type: 3}
     - target: {fileID: 3276172842268486353, guid: beb97a1c05a00fd44bbb57df5f67e6c3, type: 3}
       propertyPath: m_audioClip
       value: 
