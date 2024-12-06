@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
-
-// import OrderFulfillment;
 public class OrderScreenController : MonoBehaviour
 {
     const int MAX_REND_ORD = 8;
@@ -13,7 +10,7 @@ public class OrderScreenController : MonoBehaviour
     public GameObject pep;
     public GameObject sausage;
     public static int orderCount = 0;
-    private Vector3[] spawnPos = {new Vector3(1.85000002f,3.15350008f,-88.3889999f),
+    private readonly Vector3[] spawnPos = {new Vector3(1.85000002f,3.15350008f,-88.3889999f),
                           new Vector3(0.827000022f,3.1559999f,-88.3639984f),
                           new Vector3(-0.189999998f,3.15100002f,-88.401001f),
                           new Vector3(-1.20899999f,3.15100002f,-88.401001f),
@@ -22,44 +19,51 @@ public class OrderScreenController : MonoBehaviour
                           new Vector3(-0.189999998f,2.22600007f,-88.401001f),
                           new Vector3(-1.20899999f,2.22600007f,-88.401001f)};
 
-    private List<Order> orders = new();
-    private List<GameObject> rendered = new();
+    private static readonly List<Order> orders = new();
+    private static readonly List<GameObject> rendered = new();
 
-    // Start is called before the first frame update
-    void Start()
+    public void OrderCompleted(Order order)
     {
+        int ind = -1;
+        foreach(Order o in orders){
+            Debug.Log(o);
+        }
+        for(int i = 0; i < orderCount; i++){
+            Debug.Log(i);
+            Debug.Log(orders[i].toString());
+            if(orders[i].compare(order)){
+                ind = i;
+                break;
+            }
+        }
+        if (ind == -1) { throw new InvalidOrder("Tried to remove an order that has not been stored in the order system.\n"); }
+        orders.RemoveAt(ind);
+        orderCount--;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void OrderCompleted(Order order)
-    {
-        if (!orders.Remove(order)) { throw new InvalidOrder("Tried to remove an order that has not been stored in the order system.\n"); }
         foreach(GameObject go in rendered){
             Destroy(go);
         }
         rendered.Clear();
-        for (int i = 0; i < MAX_REND_ORD; i++)
+        for (int i = 0; i < MAX_REND_ORD && i < orders.Count; i++)
         {
             GameObject obj = orders[i].ssg ? sausage : orders[i].pep ? pep : cheese;
-            GameObject spawned = Instantiate(obj, spawnPos[orderCount], Quaternion.identity);
+            GameObject spawned = Instantiate(obj, spawnPos[i], Quaternion.identity);
             spawned.transform.Rotate(Vector3.right, 90f, Space.World);
+            rendered.Add(spawned);
         }
-        orderCount--;
     }
 
     public void OnButtonClicked(string pizzaType)
     {
         if (pizzaType == "Cheese")
         {
-            Order order = new Order();
-            order.sauce = true;
-            order.cheese = true;
+            Order order = new()
+            {
+                sauce = true,
+                cheese = true,
+                ssg = false,
+                pep = false
+            };
 
             orders.Add(order);
             if (orderCount < spawnPos.Length)
@@ -73,10 +77,13 @@ public class OrderScreenController : MonoBehaviour
         }
         else if (pizzaType == "Pep")
         {
-            Order order = new Order();
-            order.sauce = true;
-            order.cheese = true;
-            order.pep = true;
+            Order order = new()
+            {
+                sauce = true,
+                cheese = true,
+                pep = true,
+                ssg = false
+            };
             orders.Add(order);
             if (orderCount < spawnPos.Length)
             {
@@ -89,10 +96,12 @@ public class OrderScreenController : MonoBehaviour
         }
         else
         {
-            Order order = new Order();
-            order.sauce = true;
-            order.cheese = true;
-            order.ssg = true;
+            Order order = new(){
+                sauce = true,
+                cheese = true,
+                ssg = true,
+                pep = false
+            };
             orders.Add(order);
             if (orderCount < spawnPos.Length)
             {

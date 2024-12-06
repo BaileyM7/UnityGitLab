@@ -8,17 +8,8 @@ public class OrderFulfillment : MonoBehaviour
 
     public AudioSource victoryNoise;
     public AudioSource wrongOrderNoise;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public OrderScreenController osc;
 
     void OnTriggerEnter(Collider other)
     {
@@ -28,6 +19,7 @@ public class OrderFulfillment : MonoBehaviour
         if (isCorrectOrder(other.gameObject))
         {
             Debug.Log("Correct Order");
+            osc.OrderCompleted(OrderFromCrust(other.gameObject));
             victoryNoise.Play();
         }
         else
@@ -36,12 +28,12 @@ public class OrderFulfillment : MonoBehaviour
             wrongOrderNoise.Play();
         }
 
+        //normal destroy doesn't work (I think because sockets are stupid and mean)
         List<GameObject> list = new();
-        Destroy(other.gameObject);
-        // RecursiveDestroy(other.transform, list);
-        // foreach(GameObject go in list){
-        //     Destroy(go);
-        // }
+        RecursiveDestroy(other.transform, list);
+        foreach(GameObject go in list){
+            Destroy(go);
+        }
     }
 
     void RecursiveDestroy(Transform go, List<GameObject> list){
@@ -51,18 +43,7 @@ public class OrderFulfillment : MonoBehaviour
         }
     }
 
-    void Consume(Transform t){
-        foreach (Transform ingredient in t.Find("scaleTranslator")){
-            Debug.Log("DESTROY:");
-            Debug.Log(ingredient.gameObject);
-            Destroy(ingredient.gameObject);
-        }
-        Destroy(t.gameObject);
-    }
-
-    bool isCorrectOrder(GameObject crust)
-    {
-        // what is on the pizza?
+    public Order OrderFromCrust(GameObject crust){
         bool hasCheese=false,hasSauce=false,hasPep=false,hasSsg = false;
         foreach (Transform ingredient in crust.transform.Find("scaleTranslator")){
             if (ingredient.CompareTag("Cheese")) {hasCheese = true;}
@@ -70,11 +51,29 @@ public class OrderFulfillment : MonoBehaviour
             else if (ingredient.CompareTag("Pep")) {hasPep = true;}
             else if (ingredient.CompareTag("Topping")) {hasSsg = true;}
         }
+        return new(){
+            cheese = hasCheese,
+            pep = hasPep,
+            ssg = hasSsg,
+            sauce = hasSauce
+        };
+    }
+
+    bool isCorrectOrder(GameObject crust)
+    {
+        // what is on the pizza?
+        Order o = OrderFromCrust(crust);
 
         // does it match the expected?
         //TODO using temp order for now
-        Order temp = new Order();
-        temp.cheese = true; temp.sauce = true; temp.pep = true;
-        return temp.cheese == hasCheese && temp.sauce == hasSauce && temp.pep == hasPep && temp.ssg == hasSsg;
+        Order temp = new()
+        {
+            cheese = true,
+            sauce = true,
+            pep = true,
+            ssg=false
+        };
+
+        return o.compare(temp);
     }
 }

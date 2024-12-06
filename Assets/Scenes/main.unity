@@ -16132,6 +16132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victoryNoise: {fileID: 40484756}
   wrongOrderNoise: {fileID: 1472620276}
+  osc: {fileID: 1624002510}
 --- !u!65 &1655437007
 BoxCollider:
   m_ObjectHideFlags: 0

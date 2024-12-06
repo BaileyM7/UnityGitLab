@@ -8,6 +8,10 @@ public class Order
     {
         return this.cheese == other.cheese && this.sauce == other.sauce && this.pep == other.pep && this.ssg == other.ssg;
     }
+
+    public String toString(){
+        return $"Cheese: {cheese}, Sauce: {sauce}, Pep: {pep}, Ssg:{ssg}";
+    }
 }
 
 public class InvalidOrder : Exception {
