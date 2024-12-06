@@ -27,7 +27,6 @@ public class OvenController : MonoBehaviour
 
 
     private Dictionary<GameObject, BakeInfo> tracked = new Dictionary<GameObject, BakeInfo>();
-    private float elapsedTime = 0f;
     private float bakeTime = 15.0f;
     private Color crustTarget = new Color(240 / 255.0f, 206 / 255.0f, 105 / 255.0f);
     private Color cheeseTarget = new Color(240 / 255.0f, 226 / 255.0f, 72 / 255.0f);

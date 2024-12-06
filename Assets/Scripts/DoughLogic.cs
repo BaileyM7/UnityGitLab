@@ -33,7 +33,6 @@ public class DoughLogic : MonoBehaviour
         if (obj != null)
         {
             this.socketed.Add(obj.gameObject);
-            smoosh(obj.gameObject);
         }
     }
 
@@ -48,22 +47,6 @@ public class DoughLogic : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public void smoosh(GameObject ing)
-    {
-        Vector3 originalScale = ing.transform.lossyScale;
-
-        tempParent.transform.position = ing.transform.position;
-        tempParent.transform.rotation = ing.transform.rotation;
-        ing.transform.SetParent(tempParent.transform);
-        tempParent.transform.SetParent(this.transform);
-
-        ing.transform.localScale = new Vector3(
-                originalScale.x / this.transform.lossyScale.x,
-                originalScale.y / this.transform.lossyScale.y,
-                originalScale.z / this.transform.lossyScale.z
-            );
     }
 
 
