@@ -3,10 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Order{
-    public bool cheese,sauce,pep,ssg;
-}
-
 public class OrderFulfillment : MonoBehaviour
 {
 
