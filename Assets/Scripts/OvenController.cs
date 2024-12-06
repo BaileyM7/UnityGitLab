@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 using Zinnia.Data.Type;
 
 public class OvenController : MonoBehaviour
@@ -94,18 +96,31 @@ public class OvenController : MonoBehaviour
         {
             // single piece bake-ables (non-crust)
             StartTracking(other.gameObject);
+            // StartCoroutine(GrabCleaner(other));
         }
         else if (other.CompareTag("Pep") || other.CompareTag("Topping"))
         {
             // multiple tiny things with individual materials
-            foreach(Transform c in other.transform){
+            foreach (Transform c in other.transform)
+            {
                 StartTracking(c.gameObject);
             }
+            // StartCoroutine(GrabCleaner(other));
         }
         else
         {
             // Debug.Log("Bad object in oven");
         }
+    }
+
+    /*makes the grabbing of this object a cleaner action.*/
+    IEnumerator GrabCleaner(Collider other)
+    {
+        // waiting so there's time to actually put the pizza in the oven before it starts gettin funky
+        yield return new WaitForSeconds(4);
+        Destroy(other.GetComponent<XRGrabInteractable>());
+        Destroy(other.GetComponent<BoxCollider>());
+        Destroy(other.GetComponent<Rigidbody>());
     }
 
     void OnTriggerExit(Collider other)

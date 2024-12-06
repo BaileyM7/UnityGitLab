@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class DoughLogic : MonoBehaviour
@@ -29,7 +30,11 @@ public class DoughLogic : MonoBehaviour
     {
         MonoBehaviour obj = args.interactableObject as MonoBehaviour;
         Debug.Log($"SOCKETING {obj.name}");
-        if (obj != null) { this.socketed.Add(obj.gameObject); }
+        if (obj != null)
+        {
+            this.socketed.Add(obj.gameObject);
+            smoosh(obj.gameObject);
+        }
     }
 
     void OnUnsocket(SelectExitEventArgs args)
@@ -44,6 +49,23 @@ public class DoughLogic : MonoBehaviour
     {
 
     }
+
+    public void smoosh(GameObject ing)
+    {
+        Vector3 originalScale = ing.transform.lossyScale;
+
+        tempParent.transform.position = ing.transform.position;
+        tempParent.transform.rotation = ing.transform.rotation;
+        ing.transform.SetParent(tempParent.transform);
+        tempParent.transform.SetParent(this.transform);
+
+        ing.transform.localScale = new Vector3(
+                originalScale.x / this.transform.lossyScale.x,
+                originalScale.y / this.transform.lossyScale.y,
+                originalScale.z / this.transform.lossyScale.z
+            );
+    }
+
 
     public void Bake()
     {

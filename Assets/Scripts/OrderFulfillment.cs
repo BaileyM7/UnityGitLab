@@ -41,10 +41,11 @@ public class OrderFulfillment : MonoBehaviour
         }
 
         List<GameObject> list = new();
-        RecursiveDestroy(other.transform, list);
-        foreach(GameObject go in list){
-            Destroy(gameObject);
-        }
+        Destroy(other.gameObject);
+        // RecursiveDestroy(other.transform, list);
+        // foreach(GameObject go in list){
+        //     Destroy(go);
+        // }
     }
 
     void RecursiveDestroy(Transform go, List<GameObject> list){
