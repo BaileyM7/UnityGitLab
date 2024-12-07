@@ -18427,7 +18427,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -22918,6 +22918,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1855881632205083749, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3344992722674915472, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.861
