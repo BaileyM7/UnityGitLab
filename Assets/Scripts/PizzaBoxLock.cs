@@ -20,6 +20,7 @@ public class PizzaBoxLock : MonoBehaviour
         lidRb = lid.GetComponent<Rigidbody>();
         bottomRb = bottomBox.GetComponent<Rigidbody>();
 
+        // bunch of checks for proper components
         if (bottomRb == null)
         {
             bottomRb = bottomBox.gameObject.AddComponent<Rigidbody>();
@@ -54,9 +55,7 @@ public class PizzaBoxLock : MonoBehaviour
     void LockBox()
     {
         isLocked = true;
-
-        // Lock the lid in place after it closes
-        lidRb.isKinematic = true;
+        lidRb.isKinematic = true; // Lock the lid in place after it closes
         lid.SetParent(bottomBox);
         lid.localPosition = Vector3.zero;
         lid.localRotation = Quaternion.identity;
