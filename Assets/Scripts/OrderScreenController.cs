@@ -25,13 +25,16 @@ public class OrderScreenController : MonoBehaviour
     public void OrderCompleted(Order order)
     {
         int ind = -1;
-        foreach(Order o in orders){
+        foreach (Order o in orders)
+        {
             Debug.Log(o);
         }
-        for(int i = 0; i < orderCount; i++){
+        for (int i = 0; i < orderCount; i++)
+        {
             Debug.Log(i);
             Debug.Log(orders[i].toString());
-            if(orders[i].compare(order)){
+            if (orders[i].compare(order))
+            {
                 ind = i;
                 break;
             }
@@ -40,7 +43,8 @@ public class OrderScreenController : MonoBehaviour
         orders.RemoveAt(ind);
         orderCount--;
 
-        foreach(GameObject go in rendered){
+        foreach (GameObject go in rendered)
+        {
             Destroy(go);
         }
         rendered.Clear();
@@ -96,7 +100,8 @@ public class OrderScreenController : MonoBehaviour
         }
         else
         {
-            Order order = new(){
+            Order order = new()
+            {
                 sauce = true,
                 cheese = true,
                 ssg = true,

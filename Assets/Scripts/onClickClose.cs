@@ -22,7 +22,6 @@ public class OnClickClose : MonoBehaviour
 
     private void OnEnable()
     {
-        // Subscribe to grab events
         grabInteractable.selectEntered.AddListener(OnGrab);
     }
 
