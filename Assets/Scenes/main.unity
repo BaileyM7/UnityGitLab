@@ -19461,6 +19461,29 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   pizzaBoxPrefab: {fileID: 1099160504}
+--- !u!114 &1729144511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729144502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PermittedDisplacementAxes: 7
+  m_ConstrainedAxisDisplacementMode: 1
+  m_TwoHandedRotationMode: 1
+  m_AllowOneHandedScaling: 1
+  m_AllowTwoHandedScaling: 0
+  m_OneHandedScaleSpeed: 0.5
+  m_ThresholdMoveRatioForScale: 0.05
+  m_ClampScaling: 1
+  m_MinimumScaleRatio: 0.25
+  m_MaximumScaleRatio: 2
+  m_ScaleMultiplier: 0.25
 --- !u!4 &1729882892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9bff4c4ffbc29a041a638ec3743c588d, type: 3}
@@ -22833,6 +22856,10 @@ PrefabInstance:
       propertyPath: maxFallDist
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 3127728407087826087, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3385890772825029785, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_PhysicsLayerMask.m_Bits
       value: 449
@@ -24026,7 +24053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1855881632205083749, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3344992722674915472, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24096,6 +24123,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7317953733037114587, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1729144507}
+    - targetCorrespondingSourceObject: {fileID: 7317953733037114587, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1729144511}
     - targetCorrespondingSourceObject: {fileID: 4830905828149853400, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
