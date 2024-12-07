@@ -41,7 +41,6 @@ public class ShelfPizzaSpawner : XRGrabInteractable
         }
 
         // Make sure the shelf is not removed or deactivated
-        // Optional: If you don't want the shelf to be "grabbed" anymore, use this to release the shelf without destroying it
         interactionManager.SelectExit(interactor, this);
     }
 }
