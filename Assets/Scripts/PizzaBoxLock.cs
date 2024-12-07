@@ -7,19 +7,35 @@ public class PizzaBoxLock : MonoBehaviour
     public Transform lid; // Assign the lid Transform
     public Transform bottomBox; // Assign the bottom box Transform
     public float closeThreshold = 0.05f; // Distance threshold for lid closure
-    public bool isLocked = false;
+    public bool isLocked = false; // Tracks if the lid is locked
 
-    private Rigidbody lidRb;
-    private Rigidbody bottomRb;
+    private Rigidbody lidRb; // Rigidbody of the lid
+    private Rigidbody bottomRb; // Rigidbody of the bottom box
+
+    private XRGrabInteractable boxGrabInteractable; // XR Grab Interactable for the bottom box
+    private XRGrabInteractable lidGrabInteractable; // XR Grab Interactable for the lid
 
     void Start()
     {
         lidRb = lid.GetComponent<Rigidbody>();
         bottomRb = bottomBox.GetComponent<Rigidbody>();
+
+        // bunch of checks for proper components
         if (bottomRb == null)
         {
             bottomRb = bottomBox.gameObject.AddComponent<Rigidbody>();
-            bottomRb.isKinematic = true;
+        }
+
+        boxGrabInteractable = bottomBox.GetComponent<XRGrabInteractable>();
+        if (boxGrabInteractable == null)
+        {
+            boxGrabInteractable = bottomBox.gameObject.AddComponent<XRGrabInteractable>();
+        }
+
+        lidGrabInteractable = lid.GetComponent<XRGrabInteractable>();
+        if (lidGrabInteractable == null)
+        {
+            lidGrabInteractable = lid.gameObject.AddComponent<XRGrabInteractable>();
         }
     }
 
@@ -33,35 +49,34 @@ public class PizzaBoxLock : MonoBehaviour
 
     bool IsLidClosed()
     {
-        return Vector3.Distance(lid.position, bottomBox.position) < closeThreshold;
+            return Vector3.Distance(lid.position, bottomBox.position) < closeThreshold;
     }
 
     void LockBox()
     {
-        // Debug.Log("Box locked!");
-
         isLocked = true;
-
-        // lock lid
-        lidRb.isKinematic = true;
+        lidRb.isKinematic = true; // Lock the lid in place after it closes
         lid.SetParent(bottomBox);
+        lid.localPosition = Vector3.zero;
+        lid.localRotation = Quaternion.identity;
 
-        bottomRb.isKinematic = false;
-        XRGrabInteractable grabInteractable = bottomBox.GetComponent<XRGrabInteractable>();
-        if (grabInteractable == null)
-        {
-            grabInteractable = bottomBox.gameObject.AddComponent<XRGrabInteractable>();
-        }
+        lidGrabInteractable.enabled = true;
+        boxGrabInteractable.enabled = true;
+
+        bottomRb.isKinematic = true;
+        //Debug.Log("Box locked and ready to be grabbed.");
     }
 
     public void UnlockBox()
     {
-        // Debug.Log("Box unlocked!");
-
         isLocked = false;
+
         lidRb.isKinematic = false;
         lid.SetParent(null);
+        lidGrabInteractable.enabled = true;
 
-        bottomRb.isKinematic = true;
+        boxGrabInteractable.enabled = true;
+
+       //Debug.Log("Box unlocked and can be interacted with.");
     }
 }

@@ -150,3 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pizzaBoxAnimator: {fileID: 0}
+  lid: {fileID: 0}
+  pizzaBox: {fileID: 0}
+  lidRigidbody: {fileID: 0}
+  boxRigidbody: {fileID: 0}
