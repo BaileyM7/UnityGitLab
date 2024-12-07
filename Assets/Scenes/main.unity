@@ -22926,6 +22926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1855881632205083749, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3344992722674915472, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.861
@@ -22977,6 +22981,10 @@ PrefabInstance:
     - target: {fileID: 7317953733037114587, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       propertyPath: m_Name
       value: shelves
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317953733037114587, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555829434659464597, guid: 2b663362803964679b3c39e6b3f573ce, type: 3}
       propertyPath: m_Mesh
