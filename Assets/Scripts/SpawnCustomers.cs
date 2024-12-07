@@ -70,6 +70,8 @@ public class SpawnCustomers : MonoBehaviour
             yield return null; // waits for the next frame
         }
 
+
+
         // remove the customer from the active list after they reach the target
         //activeCustomers.Remove(customer);
 
@@ -79,6 +81,17 @@ public class SpawnCustomers : MonoBehaviour
         
 
     }
+
+//     public void RemoveAndDestroyCustomer(GameObject customer)
+//     {
+//     if (activeCustomers.Contains(customer))
+//     {
+//         activeCustomers.Remove(customer); // Remove from the active list
+//         Destroy(customer); // Destroy the GameObject
+//         Debug.Log("Customer destroyed after correct order.");
+//     }
+// }
+
 
     
 }
