@@ -909,9 +909,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d5c349c5caf90452ba3cf315635f603d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1099160509}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d5c349c5caf90452ba3cf315635f603d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1099160511}
     - targetCorrespondingSourceObject: {fileID: -1751480086967751553, guid: d5c349c5caf90452ba3cf315635f603d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 98911437}
@@ -1244,7 +1241,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5754,10 +5751,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052239919182180183, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3052239919182180183, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052239919182180183, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3052239919182180183, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
@@ -5775,7 +5776,7 @@ PrefabInstance:
     - target: {fileID: 3907793323272724629, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_ConnectedBody
       value: 
-      objectReference: {fileID: 1791205302}
+      objectReference: {fileID: 1381544852}
     - target: {fileID: 3907793323272724629, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_EnableCollision
       value: 0
@@ -5786,11 +5787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3907793323272724629, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.62
+      value: -0.8647877
       objectReference: {fileID: 0}
     - target: {fileID: 3907793323272724629, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.399999
+      value: -0.5027079
       objectReference: {fileID: 0}
     - target: {fileID: 5360969579331373354, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       propertyPath: m_Name
@@ -5882,6 +5883,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8683848162842073818, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
       insertIndex: -1
       addedObject: {fileID: 167946620}
+    - targetCorrespondingSourceObject: {fileID: 5513797736171574547, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1381544852}
   m_SourcePrefab: {fileID: 100100000, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
 --- !u!1001 &536801201
 PrefabInstance:
@@ -10059,9 +10063,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -56.312
       objectReference: {fileID: 0}
+    - target: {fileID: 8293009264905647617, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293009264905647617, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8331962649266397568, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863989585442577740, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8955553365763005096, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
       propertyPath: m_Name
@@ -11057,7 +11073,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -11089,7 +11105,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -11146,7 +11162,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1099160507}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -11242,7 +11270,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
@@ -11253,27 +11281,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5c349c5caf90452ba3cf315635f603d, type: 3}
   m_PrefabInstance: {fileID: 98911428}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1099160511
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099160504}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.9817228, y: 0.9223654, z: 1}
-  m_Center: {x: 0.009138613, y: 0.41193175, z: 2.0062951e-11}
 --- !u!1001 &1104136845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14713,7 +14720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1576310256}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -14846,12 +14854,44 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!1 &1381544847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5513797736171574547, guid: d088d16a26bbc4b4b95279f8f1010538, type: 3}
+  m_PrefabInstance: {fileID: 534589692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1381544852
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381544847}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1383087785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17119,6 +17159,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 352825419419854853, guid: 48597015fd5f640ef81c751b3764b5d2, type: 3}
+--- !u!64 &1576310256 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 8293009264905647617, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
+  m_PrefabInstance: {fileID: 1001929299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584718342
 GameObject:
   m_ObjectHideFlags: 0
