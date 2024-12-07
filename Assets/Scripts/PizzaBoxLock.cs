@@ -19,7 +19,7 @@ public class PizzaBoxLock : MonoBehaviour
         if (bottomRb == null)
         {
             bottomRb = bottomBox.gameObject.AddComponent<Rigidbody>();
-            bottomRb.isKinematic = true;
+            //bottomRb.isKinematic = true;
         }
     }
 
@@ -43,25 +43,13 @@ public class PizzaBoxLock : MonoBehaviour
         isLocked = true;
 
         // lock lid
-        lidRb.isKinematic = true;
+        //lidRb.isKinematic = true;
         lid.SetParent(bottomBox);
 
-        bottomRb.isKinematic = false;
+        //bottomRb.isKinematic = false;
         XRGrabInteractable grabInteractable = bottomBox.GetComponent<XRGrabInteractable>();
-        if (grabInteractable == null)
-        {
-            grabInteractable = bottomBox.gameObject.AddComponent<XRGrabInteractable>();
-        }
+
     }
 
-    public void UnlockBox()
-    {
-        // Debug.Log("Box unlocked!");
 
-        isLocked = false;
-        lidRb.isKinematic = false;
-        lid.SetParent(null);
-
-        bottomRb.isKinematic = true;
-    }
 }
