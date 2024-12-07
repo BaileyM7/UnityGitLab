@@ -1032,7 +1032,7 @@ MeshCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 961
+    m_Bits: 960
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -10079,6 +10079,14 @@ PrefabInstance:
       propertyPath: m_ProvidesContacts
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8863989585442577740, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863989585442577740, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8955553365763005096, guid: ddb2209f283eb435e906e1a337b1580d, type: 3}
       propertyPath: m_Name
       value: Indoors
@@ -14668,7 +14676,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 449
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
