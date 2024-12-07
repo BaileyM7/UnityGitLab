@@ -257,6 +257,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6647685558353651015, guid: e3fa5a08b38ef0c4aa9351529a9ab81e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7521444274901446117}
+    - targetCorrespondingSourceObject: {fileID: 6647685558353651015, guid: e3fa5a08b38ef0c4aa9351529a9ab81e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8627806075393802189}
+    - targetCorrespondingSourceObject: {fileID: 6647685558353651015, guid: e3fa5a08b38ef0c4aa9351529a9ab81e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7685870749963112240}
   m_SourcePrefab: {fileID: 100100000, guid: e3fa5a08b38ef0c4aa9351529a9ab81e, type: 3}
 --- !u!1 &1903505818138038946 stripped
 GameObject:
@@ -544,6 +550,53 @@ MonoBehaviour:
   victoryNoise: {fileID: 0}
   wrongOrderNoise: {fileID: 0}
   osc: {fileID: 0}
+--- !u!54 &8627806075393802189
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903505818138038946}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7685870749963112240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903505818138038946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0bfa9296d44f0b4ca0514dc2d868642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerPrefabs: []
+  spawnPoint: {fileID: 0}
+  targetPoint: {fileID: 0}
+  moveSpeed: 2
+  minSpawnDelay: 1
+  maxSpawnDelay: 5
+  activeCustomers: []
+  maxCustomers: 1
 --- !u!4 &4729192762926518286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3fa5a08b38ef0c4aa9351529a9ab81e, type: 3}

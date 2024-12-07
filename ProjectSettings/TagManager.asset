@@ -10,6 +10,7 @@ TagManager:
   - lid
   - Dough
   - Pep
+  - Pizzabox
   layers:
   - Default
   - TransparentFX

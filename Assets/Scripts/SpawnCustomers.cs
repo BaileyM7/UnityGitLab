@@ -82,17 +82,39 @@ public class SpawnCustomers : MonoBehaviour
 
     }
 
-//     public void RemoveAndDestroyCustomer(GameObject customer)
-//     {
-//     if (activeCustomers.Contains(customer))
-//     {
-//         activeCustomers.Remove(customer); // Remove from the active list
-//         Destroy(customer); // Destroy the GameObject
-//         Debug.Log("Customer destroyed after correct order.");
-//     }
-// }
+    void OnTriggerEnter(Collider other)
+{
+    // Check if the colliding object is the pizza box
+    if (other.CompareTag("Pizzabox"))
+    {
+        Debug.Log("Pizza box collided with customer!");
 
+        // Remove the customer from the active list
+        if (activeCustomers.Contains(gameObject))
+        {
+            activeCustomers.Remove(gameObject);
+            Debug.Log("Customer removed from active list.");
+        }
 
-    
+        // Destroy the customer GameObject
+        Destroy(gameObject);
+        Debug.Log("Customer destroyed after receiving the pizza.");
+    }
 }
+
+
+
+    public void RemoveAndDestroyCustomer(GameObject customer)
+    {
+    if (activeCustomers.Contains(customer))
+    {
+        activeCustomers.Remove(customer); // Remove from the active list
+        Destroy(customer); // Destroy the GameObject
+        Debug.Log("Customer destroyed after correct order.");
+    }
+    }
+
+}
+    
+
 
