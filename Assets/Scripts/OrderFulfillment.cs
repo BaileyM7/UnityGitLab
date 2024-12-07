@@ -19,7 +19,11 @@ public class OrderFulfillment : MonoBehaviour
         if (isCorrectOrder(other.gameObject))
         {
             Debug.Log("Correct Order");
-            osc.OrderCompleted(OrderFromCrust(other.gameObject));
+            try
+            {
+                osc.OrderCompleted(OrderFromCrust(other.gameObject));
+            }
+            catch (InvalidOrder) { Debug.LogError("ERROR: Correct order was submitted to correct place but the order was not reperesented on the order screen. Likely because the order was never input in the register.\n"); }
             victoryNoise.Play();
         }
         else
@@ -31,27 +35,33 @@ public class OrderFulfillment : MonoBehaviour
         //normal destroy doesn't work (I think because sockets are stupid and mean)
         List<GameObject> list = new();
         RecursiveDestroy(other.transform, list);
-        foreach(GameObject go in list){
+        foreach (GameObject go in list)
+        {
             Destroy(go);
         }
     }
 
-    void RecursiveDestroy(Transform go, List<GameObject> list){
+    void RecursiveDestroy(Transform go, List<GameObject> list)
+    {
         list.Add(go.gameObject);
-        foreach(Transform t in go){
+        foreach (Transform t in go)
+        {
             RecursiveDestroy(t, list);
         }
     }
 
-    public Order OrderFromCrust(GameObject crust){
-        bool hasCheese=false,hasSauce=false,hasPep=false,hasSsg = false;
-        foreach (Transform ingredient in crust.transform.Find("scaleTranslator")){
-            if (ingredient.CompareTag("Cheese")) {hasCheese = true;}
-            else if (ingredient.CompareTag("Sauce")) {hasSauce = true;}
-            else if (ingredient.CompareTag("Pep")) {hasPep = true;}
-            else if (ingredient.CompareTag("Topping")) {hasSsg = true;}
+    public Order OrderFromCrust(GameObject crust)
+    {
+        bool hasCheese = false, hasSauce = false, hasPep = false, hasSsg = false;
+        foreach (Transform ingredient in crust.transform.Find("scaleTranslator"))
+        {
+            if (ingredient.CompareTag("Cheese")) { hasCheese = true; }
+            else if (ingredient.CompareTag("Sauce")) { hasSauce = true; }
+            else if (ingredient.CompareTag("Pep")) { hasPep = true; }
+            else if (ingredient.CompareTag("Topping")) { hasSsg = true; }
         }
-        return new(){
+        return new()
+        {
             cheese = hasCheese,
             pep = hasPep,
             ssg = hasSsg,
@@ -71,7 +81,7 @@ public class OrderFulfillment : MonoBehaviour
             cheese = true,
             sauce = true,
             pep = true,
-            ssg=false
+            ssg = false
         };
 
         return o.compare(temp);

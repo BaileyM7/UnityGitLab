@@ -12,7 +12,7 @@ public class CarController : MonoBehaviour
     public float steeringRange = 30;
     public float steeringRangeAtMaxSpeed = 10;
     public float centreOfGravityOffset = -1f;
-    public Vector3 enterLoc = new Vector3(-0.340000004f, -0.768000007f, 1.19000006f);
+    public Vector3 enterLoc = new Vector3(0.284999996f,0f,0.497999996f);
     public Quaternion enterRot = new Quaternion(0f, 0f, 0f, 1f);
     public Vector3 exitLoc = new Vector3(-2.20000005f, 0f, 1.13f);
     public Quaternion exitRot = new Quaternion(0f, 0f, 0f, 1f);
@@ -55,6 +55,7 @@ public class CarController : MonoBehaviour
         playerTP.SetActive(false);
         playerTurn.SetActive(false);
         playerClimb.SetActive(false);
+        Physics.IgnoreLayerCollision(2, 10, true);
     }
 
     public void PlayerExit()
@@ -68,6 +69,7 @@ public class CarController : MonoBehaviour
         playerTP.SetActive(true);
         playerTurn.SetActive(true);
         playerClimb.SetActive(true);
+        Physics.IgnoreLayerCollision(2, 10, false);
     }
 
     public void toggleEnterExit()
