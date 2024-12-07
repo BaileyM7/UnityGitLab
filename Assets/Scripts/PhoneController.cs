@@ -73,17 +73,17 @@ private void ToggleRandomPair()
     {
         case 0:
             TogglePair(orderLocation1, beacon1);
-            displayText.fontSize = 20f;
+            displayText.fontSize = 1f;
             displayText.text = "Take this pizza to the Drug Store!";
             break;
         case 1:
             TogglePair(orderLocation2, beacon2);
-            displayText.fontSize = 20f;
+            displayText.fontSize = 1f;
             displayText.text = "Take this pizza to the Construction Site!";
             break;
         case 2:
             TogglePair(orderLocation3, beacon3);
-            displayText.fontSize = 20f;
+            displayText.fontSize = 1f;
             displayText.text = "Take this pizza to the Theatre!.";
             break;
     }
