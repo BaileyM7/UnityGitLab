@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections; // for Coroutines
-using System.Collections.Generic; // for List
+using System.Collections.Generic;
+using System; // for List
 
 public class SpawnCustomers : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class SpawnCustomers : MonoBehaviour
         while (true)
         {
             // wait for a random delay between spawns
-            float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
+            float delay = UnityEngine.Random.Range(minSpawnDelay, maxSpawnDelay);
             yield return new WaitForSeconds(delay);
 
             // check if there are fewer than the maximum allowed customers
@@ -41,7 +42,10 @@ public class SpawnCustomers : MonoBehaviour
     private void SpawnAndMoveCustomer()
     {
         // picks a random prefab
-        GameObject selectedPrefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
+        int n = UnityEngine.Random.Range(0, customerPrefabs.Length);
+        try{
+            GameObject selectedPrefab = customerPrefabs[n];
+        
         Debug.Log(selectedPrefab);
 
         // define a 180-degree rotation around the Y-axis
@@ -55,6 +59,9 @@ public class SpawnCustomers : MonoBehaviour
 
         // start sliding the customer to the target point
         StartCoroutine(SlideToTarget(spawnedCustomer, targetPoint.position));
+        }catch (IndexOutOfRangeException){
+            Debug.Log(gameObject);
+        }
     }
 
     private IEnumerator SlideToTarget(GameObject customer, Vector3 targetPosition)
