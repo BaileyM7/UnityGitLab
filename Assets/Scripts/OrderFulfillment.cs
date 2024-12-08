@@ -9,6 +9,7 @@ public class OrderFulfillment : MonoBehaviour
     public AudioSource victoryNoise;
     public AudioSource wrongOrderNoise;
 
+    // public OrderScreenController osc = GetComponent<OrderScreenController>();
     public OrderScreenController osc;
 
     void OnTriggerEnter(Collider other)
