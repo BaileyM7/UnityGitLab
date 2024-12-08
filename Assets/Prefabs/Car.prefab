@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2402017024150132639}
   - component: {fileID: 579552126028216382}
   - component: {fileID: 327768045727652972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 3013304456454413563}
   - component: {fileID: 5284553968092367903}
   - component: {fileID: 8265983934481273086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1355,7 @@ GameObject:
   - component: {fileID: 3298988774609983166}
   - component: {fileID: 196550271261216045}
   - component: {fileID: 4956495781182433382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1660,7 +1660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 805813174079834199}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizzaHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1974,7 +1974,7 @@ GameObject:
   - component: {fileID: 1927880698809631215}
   - component: {fileID: 4566419222134585282}
   - component: {fileID: 4440694725858116657}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3420,7 +3420,7 @@ GameObject:
   - component: {fileID: 4242973915631330664}
   - component: {fileID: 2595250965967347492}
   - component: {fileID: 8296543153802254947}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: helperText (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
