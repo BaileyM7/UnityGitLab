@@ -24,12 +24,11 @@ public class PhoneController : MonoBehaviour
     Order currOrder = null;
 
     private bool isRinging = false;
-    private float ringInterval = 10f; // 5 minutes
+    private float ringInterval = 180f; // 3 minutes
 
     private void Start()
     {
-        // Rings every 5 minutes
-        InvokeRepeating(nameof(PlayRinging), ringInterval, ringInterval);
+        InvokeRepeating(nameof(PlayRinging), 20f, ringInterval);
     }
 
     private void PlayRinging()
