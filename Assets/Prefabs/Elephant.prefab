@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1492739598411703359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I want a sausage Pizza
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -513,6 +513,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 720d2b5ca72fa9b468527e84c4549376, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5772389767441407330}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 720d2b5ca72fa9b468527e84c4549376, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3842798401385159282}
     - targetCorrespondingSourceObject: {fileID: -8437487439430490104, guid: 720d2b5ca72fa9b468527e84c4549376, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3797187299021522872}
@@ -588,6 +591,27 @@ MonoBehaviour:
   cheese: {fileID: 8787432741661019961, guid: 276eb71dd8ee48745a241ab016229f61, type: 3}
   pep: {fileID: 3500837178919559272, guid: 2863118945eba5443abd7de38d83cac8, type: 3}
   sausage: {fileID: 6680914954256720977, guid: 09c9b178e5f5d4b4f917b3057f61faa2, type: 3}
+--- !u!65 &3842798401385159282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039544833606789864}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.381555, y: 8.615861, z: 11.407797}
+  m_Center: {x: 0.12881061, y: 3.8079276, z: -0.08419952}
 --- !u!1 &4478324805397151665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8437487439430490104, guid: 720d2b5ca72fa9b468527e84c4549376, type: 3}
@@ -696,13 +720,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9151454105883721663}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2965955161089883953}
+        m_TargetAssemblyTypeName: OrderFulfillment, Assembly-CSharp
+        m_MethodName: generateCustomerOrder
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 7919602358116190524}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

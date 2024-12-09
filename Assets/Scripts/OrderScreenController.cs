@@ -24,6 +24,7 @@ public class OrderScreenController : MonoBehaviour
 
     public void OrderCompleted(Order order)
     {
+        if(order == null) {throw new InvalidOrder("Order may not be null");}
         int ind = -1;
         foreach (Order o in orders)
         {

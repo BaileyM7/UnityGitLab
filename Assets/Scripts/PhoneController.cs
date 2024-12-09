@@ -12,13 +12,16 @@ public class PhoneController : MonoBehaviour
     // The three pairs of order locations and beacons (assign in Inspector)
     public GameObject orderLocation1;
     public GameObject beacon1;
+    public OrderFulfillment bof1;
+
     public GameObject orderLocation2;
     public GameObject beacon2;
+    public OrderFulfillment bof2;
     public GameObject orderLocation3;
     public GameObject beacon3;
+    public OrderFulfillment bof3;
 
-    // Pizza toppings
-    private string[] words = { "cheese", "pepperoni", "sausage" };
+    Order currOrder = null;
 
     private bool isRinging = false;
     private float ringInterval = 10f; // 5 minutes
@@ -43,7 +46,9 @@ public class PhoneController : MonoBehaviour
     private void ClearAndDisplayRandomWord()
     {
         displayText.text = ""; 
-        string selectedWord = words[Random.Range(0, words.Length)];
+        int n = Random.Range(0, Order.OrderStrs.Length);
+        string selectedWord = Order.OrderStrs[n];
+        currOrder = Order.basicOrders[n];
         displayText.text = selectedWord;
     }
 
@@ -95,5 +100,6 @@ private void ToggleRandomPair()
         bool newActiveState = !orderLocation.activeSelf;
         orderLocation.SetActive(newActiveState);
         beacon.SetActive(newActiveState);
+        orderLocation.GetComponent<OrderFulfillment>().expectedOrder = currOrder;
     }
 }

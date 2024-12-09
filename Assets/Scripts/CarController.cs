@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,10 @@ public class CarController : MonoBehaviour
     public Quaternion exitRot = new Quaternion(0f, 0f, 0f, 1f);
     public GameObject player;
     public GameObject car;
+    public GameObject steeringWheel;
+    private float steeringWheelRot = 0.0f;
+    private float maxSteeringWheelRot = 270;
+    private float minSteeringWheelRot = -270;
     public InputActionReference stick;
     public GameObject playerMove;
     public GameObject playerTP;
@@ -135,11 +140,18 @@ public class CarController : MonoBehaviour
 
         // …and to calculate how much to steer 
         // (the car steers more gently at top speed)
+        float steerTarget = hInput>0?maxSteeringWheelRot:hInput<0?minSteeringWheelRot:0;
+        // float rotFactor = Mathf.InverseLerp(0, steerTarget, steeringWheelRot);
         float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, speedFactor);
 
         // Check whether the user input is in the same direction 
         // as the car's velocity
         bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
+
+        steeringWheelRot = Mathf.Lerp(steeringWheelRot, steerTarget, .1f);
+        // steeringWheel.transform.rotation = Quaternion.Euler();
+        // steeringWheel.transform.Rotate(new Vector3(0,steeringWheel.transform.localEulerAngles.y-steeringWheelRot,0), Space.Self);
+        steeringWheel.transform.Rotate(new Vector3(0,steerTarget/200,0), Space.Self);
 
         foreach (var wheel in wheels)
         {

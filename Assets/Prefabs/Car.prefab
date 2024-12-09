@@ -3382,6 +3382,7 @@ MonoBehaviour:
   exitRot: {x: 0, y: 0, z: 0, w: 1}
   player: {fileID: 0}
   car: {fileID: 7582668280106893516}
+  steeringWheel: {fileID: 7558853977114228511}
   stick: {fileID: 1010579847677810599, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   playerMove: {fileID: 0}
   playerTP: {fileID: 0}

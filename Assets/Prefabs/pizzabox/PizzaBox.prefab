@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6748130978711164428}
   - component: {fileID: 3146863246480520353}
   - component: {fileID: 2493436051839342006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PizzaBox
-  m_TagString: Untagged
+  m_TagString: Pizzabox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4798089931998092208}
+  pizzaCrust: {fileID: 0}
 --- !u!65 &2493436051839342006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -297,7 +298,7 @@ GameObject:
   - component: {fileID: 3236618866256902782}
   - component: {fileID: 2455247443933304317}
   - component: {fileID: 132487733045049269}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +402,7 @@ GameObject:
   - component: {fileID: 7222071378664742971}
   - component: {fileID: 5307925017529121702}
   - component: {fileID: 7436601105068518312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: boxsocket
   m_TagString: Sauce
   m_Icon: {fileID: 0}
@@ -455,7 +456,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947289749768763617}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -514,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2002640051517869317}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LidPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3921507967893044342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +592,7 @@ GameObject:
   - component: {fileID: 3505104950861479880}
   - component: {fileID: 5099251455297772056}
   - component: {fileID: 7550505222486641488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
