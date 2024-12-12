@@ -42,9 +42,16 @@ public class OrderFulfillment : MonoBehaviour
             }
             catch (InvalidOrder) { Debug.LogError("ERROR: Correct order was submitted to correct place but the order was not reperesented on the order screen. Likely because the order was never input in the register.\n"); }
             victoryNoise.Play();
-            // complete the receiver of the order     
-            SpawnCustomers.Complete(gameObject);
-            Destroy(gameObject);
+            // complete the receiver of the order
+            if (gameObject.CompareTag("OrderLocation"))
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                SpawnCustomers.Complete(gameObject);
+                Destroy(gameObject);
+            }
         }
         else
         {
@@ -66,12 +73,13 @@ public class OrderFulfillment : MonoBehaviour
     {
         Debug.Log("Wrong Order");
         wrongOrderNoise.Play();
-        if (textbox != null) { 
+        if (textbox != null)
+        {
             string temp = textbox.text;
-            textbox.text = "That was not my order"; 
+            textbox.text = "That was not my order";
             yield return new WaitForSeconds(3);
             textbox.text = $"I wanted a {temp} pizza";
-            }
+        }
     }
 
     void RecursiveDestroy(Transform go, List<GameObject> list)

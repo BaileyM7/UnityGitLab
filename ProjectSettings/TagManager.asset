@@ -12,6 +12,7 @@ TagManager:
   - Pep
   - Pizzabox
   - Floor
+  - OrderLocation
   - Car
   layers:
   - Default
