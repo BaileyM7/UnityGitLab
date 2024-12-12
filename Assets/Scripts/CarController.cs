@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
+    public AudioSource carNoises;
     public float motorTorque = 2000;
     public float brakeTorque = 2000;
     public float maxSpeed = 20;
@@ -52,6 +53,7 @@ public class CarController : MonoBehaviour
     public void PlayerEnter()
     {
         Debug.Log("PLAYER ENTER\n");
+        carNoises.Play();
         player.transform.SetParent(car.transform);
         player.transform.localPosition = enterLoc;
         player.transform.localRotation = enterRot;
@@ -66,6 +68,7 @@ public class CarController : MonoBehaviour
     public void PlayerExit()
     {
         Debug.Log("PLAYER EXIT\n");
+        carNoises.Stop();
         player.transform.localPosition = exitLoc;
         player.transform.localRotation = exitRot;
         player.transform.parent = null;
