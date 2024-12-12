@@ -160,7 +160,13 @@ public class OvenController : MonoBehaviour
         {
             anim.Play("PizzaBoxClose");
             opened = !opened;
-            locked = numInOven > 0;
+            locked = false;
+            foreach(BakeInfo inf in tracked.Values){
+                if(inf.inOven && inf.timeInOven != bakeTime){
+                    locked = true;
+                    break;
+                }
+            }
             Debug.Log($"Locking the Oven: {locked}");
         }
     }
