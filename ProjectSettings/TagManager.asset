@@ -12,6 +12,7 @@ TagManager:
   - Pep
   - Pizzabox
   - Floor
+  - Car
   layers:
   - Default
   - TransparentFX
