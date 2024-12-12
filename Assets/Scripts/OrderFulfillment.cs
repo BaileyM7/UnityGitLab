@@ -42,15 +42,13 @@ public class OrderFulfillment : MonoBehaviour
             }
             catch (InvalidOrder) { Debug.LogError("ERROR: Correct order was submitted to correct place but the order was not reperesented on the order screen. Likely because the order was never input in the register.\n"); }
             victoryNoise.Play();
-            // complete the receiver of the order            
+            // complete the receiver of the order     
             SpawnCustomers.Complete(gameObject);
             Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Wrong Order");
-            wrongOrderNoise.Play();
-            if (textbox != null) { textbox.text = "That was not my order"; }
+            StartCoroutine(WrongOrder());
         }
 
         //normal destroy doesn't work on the pizza (I think because sockets are stupid and mean)
@@ -62,6 +60,18 @@ public class OrderFulfillment : MonoBehaviour
         }
         // finally destroy the box
         Destroy(other.gameObject);
+    }
+
+    IEnumerator WrongOrder()
+    {
+        Debug.Log("Wrong Order");
+        wrongOrderNoise.Play();
+        if (textbox != null) { 
+            string temp = textbox.text;
+            textbox.text = "That was not my order"; 
+            yield return new WaitForSeconds(3);
+            textbox.text = $"I wanted a {temp} pizza";
+            }
     }
 
     void RecursiveDestroy(Transform go, List<GameObject> list)
