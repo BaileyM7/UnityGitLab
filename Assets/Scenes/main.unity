@@ -199,63 +199,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 760039646653639976, guid: 9efb2638cadf04a7d9f711b8a141df62, type: 3}
   m_PrefabInstance: {fileID: 1440109}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1779396
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.969
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -84.761
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6768973
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7360775
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 94.797
-      objectReference: {fileID: 0}
-    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5885622707514441708, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
-      propertyPath: m_Name
-      value: PizzaBox
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
 --- !u!4 &2365329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 236786c1c101c47a6b32fa5646eadf4b, type: 3}
@@ -17550,6 +17493,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadf11809d78242ed8f2e2676e39f75f, type: 3}
+--- !u!1001 &870994692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.7809973
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.953
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -84.76667
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6999312
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7142103
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 91.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 341663378371129104, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885622707514441708, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
+      propertyPath: m_Name
+      value: PizzaBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fcbd07e7969aa9c4c9969e4cc740150e, type: 3}
 --- !u!1001 &873673503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49610,7 +49610,7 @@ SceneRoots:
   - {fileID: 890552968}
   - {fileID: 591498406}
   - {fileID: 995032981}
-  - {fileID: 1779396}
   - {fileID: 1013548929}
   - {fileID: 1268605217}
   - {fileID: 1200578614}
+  - {fileID: 870994692}
