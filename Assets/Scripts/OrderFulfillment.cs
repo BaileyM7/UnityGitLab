@@ -17,6 +17,7 @@ public class OrderFulfillment : MonoBehaviour
 
     public void generateCustomerOrder(TMP_Text textbox)
     {
+        if (expectedOrder != null) return;
         this.textbox = textbox;
         int n = UnityEngine.Random.Range(0, Order.OrderStrs.Length);
         string selectedWord = Order.OrderStrs[n];
@@ -49,7 +50,7 @@ public class OrderFulfillment : MonoBehaviour
             if (textbox != null) { textbox.text = "That was not my order"; }
         }
 
-        SpawnCustomers.Complete( gameObject);
+        SpawnCustomers.Complete(gameObject);
 
         //normal destroy doesn't work on the pizza (I think because sockets are stupid and mean)
         List<GameObject> list = new();
