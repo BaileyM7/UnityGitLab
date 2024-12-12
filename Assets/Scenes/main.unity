@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 40484756}
   m_Layer: 0
   m_Name: Audio Source
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 218518177}
   m_Layer: 0
   m_Name: Audio Source (1)
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9870,7 +9870,7 @@ GameObject:
   - component: {fileID: 498390563}
   m_Layer: 0
   m_Name: beacon2
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18735,7 +18735,7 @@ GameObject:
   - component: {fileID: 927101302}
   m_Layer: 0
   m_Name: Audio Source
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19318,7 +19318,7 @@ GameObject:
   - component: {fileID: 961439083}
   m_Layer: 0
   m_Name: beacon3
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21429,7 +21429,7 @@ GameObject:
   - component: {fileID: 1055640146}
   m_Layer: 0
   m_Name: orderLocation3
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29994,7 +29994,7 @@ GameObject:
   - component: {fileID: 1390199813}
   m_Layer: 0
   m_Name: Audio Source (1)
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32106,7 +32106,7 @@ GameObject:
   - component: {fileID: 1461425288}
   m_Layer: 0
   m_Name: orderLocation2
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32269,7 +32269,7 @@ GameObject:
   - component: {fileID: 1472620276}
   m_Layer: 0
   m_Name: Audio Source (1)
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35828,7 +35828,7 @@ GameObject:
   - component: {fileID: 1655437006}
   m_Layer: 0
   m_Name: orderLocation1
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39154,7 +39154,7 @@ GameObject:
   - component: {fileID: 1775920281}
   m_Layer: 0
   m_Name: Audio Source
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45247,7 +45247,7 @@ GameObject:
   - component: {fileID: 2027356922}
   m_Layer: 0
   m_Name: beacon1
-  m_TagString: Untagged
+  m_TagString: OrderLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
