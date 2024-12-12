@@ -11,6 +11,7 @@ TagManager:
   - Dough
   - Pep
   - Pizzabox
+  - Floor
   layers:
   - Default
   - TransparentFX
