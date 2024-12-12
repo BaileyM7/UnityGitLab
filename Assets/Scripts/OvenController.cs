@@ -37,7 +37,7 @@ public class OvenController : MonoBehaviour
     // opening animation
     private bool opened = false;
     public Animator anim;
-
+    private bool locked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +64,13 @@ public class OvenController : MonoBehaviour
         {
             tracked.Remove(g);
         }
+        // unlock when all objects fully cooked
+        if (locked && tracked.Count == 0)
+        {
+            locked = false;
+            Debug.Log("Oven done baking!");
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 
     private Color WhichTargetColor(GameObject g)
@@ -82,7 +89,6 @@ public class OvenController : MonoBehaviour
             if (tracked.ContainsKey(g))
             {
                 tracked[g].inOven = true;
-                numInOven++;
             }
             else
             {
@@ -117,6 +123,7 @@ public class OvenController : MonoBehaviour
         {
             // Debug.Log("Bad object in oven");
         }
+        numInOven++;
     }
 
     /*makes the grabbing of this object a cleaner action.*/
@@ -144,14 +151,17 @@ public class OvenController : MonoBehaviour
     // 2 - Open
     public void onToggle()
     {
-        opened = !opened;
-        if (opened)
+        if (!opened && !locked)
         {
             anim.Play("PizzaBoxOpen");
+            opened = !opened;
         }
-        else
+        else if (opened && !locked)
         {
             anim.Play("PizzaBoxClose");
+            opened = !opened;
+            locked = numInOven > 0;
+            Debug.Log($"Locking the Oven: {locked}");
         }
     }
 }
