@@ -82,21 +82,11 @@ public class SpawnCustomers : MonoBehaviour
             );
             yield return null; // waits for the next frame
         }
-
-
-
-        // remove the customer from the active list after they reach the target
-        //activeCustomers.Remove(customer);
-
-        // destroy the customer GameObject after reaching the target
-        // Destroy(customer);
-
-
-
     }
 
     void OnTriggerEnter(Collider other)
     {
+        /* - None of this ever gets triggered, it is done by customers.
         // Check if the colliding object is the pizza box
         if (other.CompareTag("Pizzabox"))
         {
@@ -113,6 +103,7 @@ public class SpawnCustomers : MonoBehaviour
 
             Debug.Log("Customer destroyed after receiving the pizza.");
         }
+        */
     }
 
     public static void Complete(GameObject customer)
@@ -132,7 +123,7 @@ public class SpawnCustomers : MonoBehaviour
         if (activeCustomers.Contains(customer))
         {
             activeCustomers.Remove(customer); // Remove from the active list
-            Destroy(customer); // Destroy the GameObject
+            // Destroy(customer); // Destroy the GameObject
             Debug.Log("Customer destroyed after correct order.");
         }
     }
