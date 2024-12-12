@@ -9,6 +9,7 @@ public class OrderScreenController : MonoBehaviour
     public GameObject cheese;
     public GameObject pep;
     public GameObject sausage;
+    public AudioSource screenAdd;
     public static int orderCount = 0;
     private readonly Vector3[] spawnPos = {new Vector3(1.85000002f,3.15350008f,-88.3889999f),
                           new Vector3(0.827000022f,3.1559999f,-88.3639984f),
@@ -74,6 +75,7 @@ public class OrderScreenController : MonoBehaviour
             if (orderCount < spawnPos.Length)
             {
                 GameObject spawned = Instantiate(cheese, spawnPos[orderCount], Quaternion.identity);
+                screenAdd.Play();
 
                 spawned.transform.Rotate(Vector3.right, 90f, Space.World);
                 rendered.Add(spawned);
@@ -93,6 +95,7 @@ public class OrderScreenController : MonoBehaviour
             if (orderCount < spawnPos.Length)
             {
                 GameObject spawned = Instantiate(pep, spawnPos[orderCount], Quaternion.identity);
+                screenAdd.Play();
 
                 spawned.transform.Rotate(Vector3.right, 90f, Space.World);
                 rendered.Add(spawned);
@@ -112,6 +115,7 @@ public class OrderScreenController : MonoBehaviour
             if (orderCount < spawnPos.Length)
             {
                 GameObject spawned = Instantiate(sausage, spawnPos[orderCount], Quaternion.identity);
+                screenAdd.Play();
 
                 spawned.transform.Rotate(Vector3.right, 90f, Space.World);
                 rendered.Add(spawned);
