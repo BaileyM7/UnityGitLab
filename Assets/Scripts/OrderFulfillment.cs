@@ -49,6 +49,8 @@ public class OrderFulfillment : MonoBehaviour
             if (textbox != null) { textbox.text = "That was not my order"; }
         }
 
+        SpawnCustomers.Complete( gameObject);
+
         //normal destroy doesn't work on the pizza (I think because sockets are stupid and mean)
         List<GameObject> list = new();
         RecursiveDestroy(GetPizzaInBox(other.gameObject).transform, list);

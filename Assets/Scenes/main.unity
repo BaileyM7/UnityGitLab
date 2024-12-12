@@ -7945,16 +7945,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerPrefabs:
-  - {fileID: 4039544833606789864, guid: 12449a673ff2bd44c93c4e74eeac4157, type: 3}
   - {fileID: 5398311196093123252, guid: 17798b6a40db0a341881cd17504668ad, type: 3}
   - {fileID: 378662194955493931, guid: e8c7276f2932ab9448cccd15bf16ec9a, type: 3}
+  - {fileID: 4039544833606789864, guid: 12449a673ff2bd44c93c4e74eeac4157, type: 3}
   spawnPoint: {fileID: 413440756}
   targetPoint: {fileID: 343808336}
   moveSpeed: 2
   minSpawnDelay: 1
-  maxSpawnDelay: 4
-  activeCustomers: []
-  maxCustomers: 1
+  maxSpawnDelay: 5
 --- !u!4 &413440756
 Transform:
   m_ObjectHideFlags: 0
