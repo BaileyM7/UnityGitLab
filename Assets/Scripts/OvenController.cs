@@ -31,6 +31,12 @@ public class OvenController : MonoBehaviour
     private Color crustTarget = new Color(240 / 255.0f, 206 / 255.0f, 105 / 255.0f);
     private Color cheeseTarget = new Color(240 / 255.0f, 226 / 255.0f, 72 / 255.0f);
     private Color pepTarget = new Color(173 / 255.0f, 54 / 255.0f, 35 / 255.0f);
+    private int numInOven = 0;
+
+
+    // opening animation
+    private bool opened = false;
+    public Animator anim;
 
 
     // Start is called before the first frame update
@@ -76,6 +82,7 @@ public class OvenController : MonoBehaviour
             if (tracked.ContainsKey(g))
             {
                 tracked[g].inOven = true;
+                numInOven++;
             }
             else
             {
@@ -128,6 +135,23 @@ public class OvenController : MonoBehaviour
         if (rend != null && tracked.ContainsKey(rend.gameObject))
         {
             tracked[other.gameObject].inOven = false;
+            numInOven--;
+        }
+    }
+
+
+    // 1 - Close
+    // 2 - Open
+    public void onToggle()
+    {
+        opened = !opened;
+        if (opened)
+        {
+            anim.Play("PizzaBoxOpen");
+        }
+        else
+        {
+            anim.Play("PizzaBoxClose");
         }
     }
 }

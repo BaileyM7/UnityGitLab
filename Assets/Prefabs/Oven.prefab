@@ -812,8 +812,8 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9040688222517775844}
-        m_TargetAssemblyTypeName: PizzaBox, Assembly-CSharp
+      - m_Target: {fileID: 4972182051929814541}
+        m_TargetAssemblyTypeName: OvenController, Assembly-CSharp
         m_MethodName: onToggle
         m_Mode: 1
         m_Arguments:
@@ -1478,7 +1478,6 @@ GameObject:
   - component: {fileID: 8003624884479914812}
   - component: {fileID: 4972182051929814541}
   - component: {fileID: 1754297354340612003}
-  - component: {fileID: 9040688222517775844}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -1539,6 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c02105427b0ce647b986723b6ca9523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1754297354340612003}
 --- !u!95 &1754297354340612003
 Animator:
   serializedVersion: 5
@@ -1560,19 +1560,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9040688222517775844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360969579331373354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75f3750dd75d24a45b6e31c19ce654ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1754297354340612003}
 --- !u!1 &5376297853845397136
 GameObject:
   m_ObjectHideFlags: 0
