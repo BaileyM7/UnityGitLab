@@ -38,6 +38,7 @@ public class OvenController : MonoBehaviour
     private bool opened = false;
     public Animator anim;
     private bool locked = false;
+    private bool playerInput = false;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +71,11 @@ public class OvenController : MonoBehaviour
             locked = false;
             Debug.Log("Oven done baking!");
             gameObject.GetComponent<AudioSource>().Play();
+            if (playerInput)
+            {
+                onToggle();
+                playerInput = false;
+            }
         }
     }
 
@@ -151,6 +157,7 @@ public class OvenController : MonoBehaviour
     // 2 - Open
     public void onToggle()
     {
+        playerInput = true;
         if (!opened && !locked)
         {
             anim.Play("PizzaBoxOpen");
@@ -161,8 +168,10 @@ public class OvenController : MonoBehaviour
             anim.Play("PizzaBoxClose");
             opened = !opened;
             locked = false;
-            foreach(BakeInfo inf in tracked.Values){
-                if(inf.inOven && inf.timeInOven != bakeTime){
+            foreach (BakeInfo inf in tracked.Values)
+            {
+                if (inf.inOven && inf.timeInOven != bakeTime)
+                {
                     locked = true;
                     break;
                 }

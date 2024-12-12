@@ -36,22 +36,7 @@ public class OrderFulfillment : MonoBehaviour
         if (isCorrectOrder(other.gameObject))
         {
             Debug.Log("Correct Order");
-            try
-            {
-                osc.OrderCompleted(OrderFromCrust(GetPizzaInBox(other.gameObject)));
-            }
-            catch (InvalidOrder) { Debug.LogError("ERROR: Correct order was submitted to correct place but the order was not reperesented on the order screen. Likely because the order was never input in the register.\n"); }
-            victoryNoise.Play();
-            // complete the receiver of the order
-            if (gameObject.CompareTag("OrderLocation"))
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                SpawnCustomers.Complete(gameObject);
-                Destroy(gameObject);
-            }
+            StartCoroutine(RightOrder(other));
         }
         else
         {
@@ -67,6 +52,27 @@ public class OrderFulfillment : MonoBehaviour
         }
         // finally destroy the box
         Destroy(other.gameObject);
+    }
+
+    IEnumerator RightOrder(Collider other)
+    {
+        victoryNoise.Play();
+        try
+        {
+            osc.OrderCompleted(OrderFromCrust(GetPizzaInBox(other.gameObject)));
+        }
+        catch (InvalidOrder) { Debug.LogError("ERROR: Correct order was submitted to correct place but the order was not reperesented on the order screen. Likely because the order was never input in the register.\n"); }
+        // complete the receiver of the order
+        yield return new WaitForSeconds(victoryNoise.clip.length);
+        if (gameObject.CompareTag("OrderLocation"))
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            SpawnCustomers.Complete(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator WrongOrder()
